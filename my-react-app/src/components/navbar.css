@@ -6,3 +6,11 @@
 .navbar-logo {
     height: 50px;
 }
+.navbar a {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: gray;
+}
+.navbar a:hover {
+    color: #448ff2;
+}

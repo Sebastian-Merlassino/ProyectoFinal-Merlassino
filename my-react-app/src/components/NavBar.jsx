@@ -16,7 +16,7 @@ const NavBar = () => {
       <div className="d-flex align-items-center gap-4">
         <ul className="nav nav-underline mb-0">
           <li className="nav-item">
-            <a className="nav-link active" href="#">
+            <a className="nav-link" href="../index.html">
               Inicio
             </a>
           </li>
@@ -31,7 +31,7 @@ const NavBar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/views/Tienda.html">
+            <a className="nav-link active" href="#">
               Tienda
             </a>
           </li>

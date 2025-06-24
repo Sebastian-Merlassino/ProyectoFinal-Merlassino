@@ -1,5 +1,6 @@
 import './App.css'
 import NavBar from './components/NavBar'
+import ListOfProducts from './components/ListOfProducts'
 
 
 function App() {
@@ -9,11 +10,13 @@ function App() {
     
     <div className="app-container">
       <NavBar />
-       
-       <div className="container">
-         <h1 className="text-center">Bienvenido a mi sitio web</h1>
-         <p className="text-center">Esta es una aplicación de ejemplo utilizando React y Bootstrap.</p>
-       </div>
+      <ListOfProducts />
+
+      
+      <footer className="footer">
+        <p>© 2023 Gestión SySO. Todos los derechos reservados.</p>
+      </footer>
+      
 
        
     </div>
