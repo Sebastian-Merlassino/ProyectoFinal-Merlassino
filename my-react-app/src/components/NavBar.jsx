@@ -1,9 +1,8 @@
 import "./navbar.css";
 import gestionSysoLogo from "../assets/Logo.png";
-import shopingCartIcon from "../assets/shopping-cart.png";
 import CartWidget from "./CartWidget";
 
-const NavBar = () => {
+const NavBar = ({ cartCount }) => {
   return (
     <nav className="navbar">
       <a href="#" title="Gestión SySO" className="navbar-brand">
@@ -43,10 +42,11 @@ const NavBar = () => {
         </ul>
 
 
-        <CartWidget />
+        <CartWidget count={ cartCount } />
 
       </div>
     </nav>
+
   );
 };
 

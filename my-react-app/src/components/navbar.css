@@ -2,15 +2,21 @@
     margin: 0 15px;
     display: flex;
     justify-content: space-between;
+    position: fixed;    
+    top: 0;
+    border-bottom: 1px solid grey;
 }
+
 .navbar-logo {
     height: 50px;
 }
+
 .navbar a {
     font-weight: bold;
     font-size: 1.2rem;
     color: gray;
 }
+
 .navbar a:hover {
     color: #448ff2;
 }
