@@ -1,10 +1,11 @@
 import "./cartwidget.css";
-import shoppingCartIcon from '../assets/shopping-cart.png';
+import shoppingCartIcon from '../../assets/shopping-cart.png';
+import { TiShoppingCart } from "react-icons/ti";
 
 const CartWidget = ({count}) => {
   return (
     <div className="cart-widget">
-      <img className="cart-widget-icon" src={shoppingCartIcon} alt="Cart Icon" />
+      <TiShoppingCart className="cart-widget-icon"/>
       <span className="cart-count">{count}</span>
     </div>
   );

@@ -1,6 +1,6 @@
 import "./navbar.css";
-import gestionSysoLogo from "../assets/Logo.png";
-import CartWidget from "./CartWidget";
+import gestionSysoLogo from "../../assets/Logo.png";
+import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = ({ cartCount }) => {
   return (

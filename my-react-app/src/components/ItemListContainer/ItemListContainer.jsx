@@ -1,5 +1,5 @@
 import "./itemlistcontainer.css";
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard";
 
 const ItemListContainer = ({ saludo, Agregar }) => {
   return (
