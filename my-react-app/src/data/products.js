@@ -37,7 +37,7 @@ const products = [
     description: "Description for Product 5",
     price: 39.99,
     image: "/img/anteojo-seguridad-argon-transparente.jpg",
-    category: "rotección ocular",
+    category: "Protección ocular",
   },
   {
     id: 6,

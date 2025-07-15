@@ -1,0 +1,19 @@
+.item-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 20px 0;
+    max-width: fit-content;
+    padding-left: 25px;
+}

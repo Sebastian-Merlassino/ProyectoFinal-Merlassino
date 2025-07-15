@@ -8,6 +8,7 @@ const Item = ({ product, Agregar }) => {
         <h5 className="card-title">{product.name}</h5>
         <p className="card-text">{product.description}</p>
         <p>Price: ${product.price}</p>
+        <p>Más información</p>
         <button className="btn btn-primary" onClick={Agregar}>
           Agregar al carrito
         </button>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import { ItemListWhithSearch } from "./components/ItemList/ItemList";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -13,7 +14,8 @@ function App() {
         <NavBar cartCount={cartCount} />
 
         <main className="main-content">
-          <ItemListContainer Agregar={agregarAlCarrito} />
+          {/* <ItemListContainer Agregar={agregarAlCarrito} /> */}
+          <ItemListWhithSearch Agregar={agregarAlCarrito} />
         </main>
 
         <footer className="footer">

@@ -1,44 +1,52 @@
-import {  useState } from 'react';
-import useProducts from '../hooks/useProducts';
+import { useState } from "react";
+import useProducts from "../hooks/useProducts";
+import "./hocFilterProducts.css";
+import Loading from "../components/Loading/Loading";
 
-const hocFilterProducts = (Components) => {
+const hocFilterProducts = (Component) => {
+  return function ({ Agregar }) {
+    const [query, setQuery] = useState("");
+    const { products, loading, error } = useProducts();
 
-    return function () {
-        const [query, setQuery] = useState("");
-        const { products, loading, error } = useProducts();
-        
-        const changeImput = (event) => { 
-            setQuery( event.target.valueto.toLowerCase() );
+    const changeInput = (event) => {
+      setQuery(event.target.value.toLowerCase());
+    };
 
-        };
+    const search = (productsList) => {
+      const filterProducts = productsList.filter((product) => {
+        return product.name.toLowerCase().includes(query);
+      });
 
-        const serch = (productsList) => {
-            return filterProducts = productsList.filter((product) => {
-                return product.name.toLowerCase().includes(query);
-            });
+      return filterProducts;
+    };
 
-            return filterProducts;
-        };
-    
+    return (
+      <>
+        <div className="item-list-container">
+          <h1>Bienvenidos a la tienda de Gestión SySO</h1>
+          <h2>Productos Disponibles</h2>
 
-        return (
-
-            <>
-
-            <div>
-                <imput
-                    type="text"
-                    placeholder="Buscar productos..."
-                    onChange={changeImput}
-                />
-            </div>
-            <Components
-                products={search(products)}
+          <form className="d-flex search" role="search">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Buscar"
+              onChange={changeInput}
             />
-            </>
-        );
-
-    }
-
-}
+            <button className="btn btn-outline-secondary" type="submit">
+              Buscar
+            </button>
+          </form>
+        </div>
+        {loading ? (
+        <Loading />
+      ) : (
+        <Component products={search(products)} Agregar={Agregar} />
+      )}
+        
+      </>
+    );
+  };
+};
 export default hocFilterProducts;

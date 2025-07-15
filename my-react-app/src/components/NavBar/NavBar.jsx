@@ -6,7 +6,8 @@ const NavBar = ({ cartCount }) => {
   return (
     <nav className="navbar">
       <a href="#" title="Gestión SySO" className="navbar-brand">
-        <img className="navbar-logo"
+        <img
+          className="navbar-logo"
           src={gestionSysoLogo}
           alt="Logotipo de Gestión SySO"
         />
@@ -29,10 +30,33 @@ const NavBar = ({ cartCount }) => {
               Servicios
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link active" href="#">
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle active"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Tienda
             </a>
+            <ul className="dropdown-menu">
+              <li>
+                <a className="dropdown-item" href="#">
+                  Cascos de seguridad
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Protección ocular
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Protección auditiva
+                </a>
+              </li>
+            </ul>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/views/contacto.html">
@@ -41,12 +65,9 @@ const NavBar = ({ cartCount }) => {
           </li>
         </ul>
 
-
-        <CartWidget count={ cartCount } />
-
+        <CartWidget count={cartCount} />
       </div>
     </nav>
-
   );
 };
 

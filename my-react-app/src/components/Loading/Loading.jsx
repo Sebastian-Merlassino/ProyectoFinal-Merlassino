@@ -1,12 +1,12 @@
 import "./loading.css";
+import { FadeLoader } from "react-spinners";
 
 const Loading = () => {
   return (
     <div className="loading-container">
-      <div className="loading-spinner"></div>
-      <p className="loading-text">Cargando...</p>
+      <FadeLoader color="#448ff2" />
     </div>
   );
-}
+};
 
 export default Loading;
