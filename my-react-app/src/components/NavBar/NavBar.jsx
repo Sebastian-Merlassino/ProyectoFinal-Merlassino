@@ -12,7 +12,7 @@ const NavBar = ({ cartCount }) => {
         />
       </a>
 
-      <div className="d-flex align-items-center gap-4">
+      <div className="d-flex align-items-center gap-4 nav-items-container">
         <ul className="nav nav-underline mb-0">
           <li className="nav-item">
             <a className="nav-link" href="../index.html">

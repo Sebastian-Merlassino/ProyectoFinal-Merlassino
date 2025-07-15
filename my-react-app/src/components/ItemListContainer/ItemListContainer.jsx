@@ -1,9 +1,9 @@
 import "./itemlistcontainer.css";
-import ProductCard from "../ProductCard";
 import getProducts from "../../data/products";
+import Item from "../Item/Item";
 import { useEffect, useState } from "react";
 
-const ItemListContainer = ({ saludo, Agregar }) => {
+const ItemListContainer = ({ Agregar }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -13,21 +13,16 @@ const ItemListContainer = ({ saludo, Agregar }) => {
   }, []);
 
   return (
-      <div className="item-list-container">
-        <h2>{saludo}</h2>
-        {products.map((product) => (
-          <div key={product.id}>
-            <p>ID: {product.id}</p>
-            <p>Nombre: {product.nombre}</p>
-            <p>Descripción: {product.descripcion}</p>
-            <p>Precio: {product.precio}</p>
-            <p>Imagen: {product.imagen}</p>
-          </div>
-        ))}
-        <div className="product-card">
-          <ProductCard Agregar={Agregar} />
-        </div>
+    <div className="item-list-container">
+      <h1>Bienvenidos a la tienda de Gestión SySO</h1>
+      <h2>Productos Disponibles</h2>
+      <div className="product-list">
+      {products.map((product) => (
+        <Item product={product} key={product.id} Agregar={Agregar} />
+      ))}
       </div>
+
+    </div>
   );
 };
 
