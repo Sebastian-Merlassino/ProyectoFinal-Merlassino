@@ -61,7 +61,7 @@ const products = [
     description: "El protector auditivo de copa L-320 suministra protección de manera no invasiva, aislando el oído de la fuente de ruido. Su diseño ergonómico y adaptabilidad permite que pueda ser usado por la mayoría de los usuarios.",
     price: 39.99,
     image: "/img/l-300-08.jpg",
-    category: "rotección auditiva",
+    category: "Protección auditiva",
   },
   {
     id: 9,
@@ -84,7 +84,7 @@ const getProducts = () => {
 const getProductById = (productId) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const product = products.find((product) => product.id === productId);
+      const product = products.find((product) => product.id === Number(productId));
       if (product) {
         resolve(product);
       } else {

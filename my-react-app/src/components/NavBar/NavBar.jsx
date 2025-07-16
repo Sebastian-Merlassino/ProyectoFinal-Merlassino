@@ -17,52 +17,52 @@ const NavBar = ({ cartCount }) => {
       <div className="d-flex align-items-center gap-4 nav-items-container">
         <ul className="nav nav-underline mb-0">
           <li className="nav-item">
-            <a className="nav-link" href="../index.html">
+            <Link className="nav-link" to="/">
               Inicio
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/views/nosotros.html">
+            <Link className="nav-link" to="/">
               Nosotros
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/views/servicios.html">
+            <Link className="nav-link" to="/">
               Servicios
-            </a>
+            </Link>
           </li>
           <li className="nav-item dropdown">
-            <a
+            <Link
               className="nav-link dropdown-toggle active"
-              href="#"
+              to="/"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               Tienda
-            </a>
+            </Link>
             <ul className="dropdown-menu">
               <li>
-                <Link className="dropdown-item" to="/Cascos de seguridad">
+                <Link className="dropdown-item" to="/Tienda/Cascos de seguridad">
                   Cascos de seguridad
                 </Link>
               </li>
               <li>
-                <Link className="dropdown-item" to="/Protección ocular">
+                <Link className="dropdown-item" to="/Tienda/Protección ocular">
                   Protección ocular
                 </Link>
               </li>
               <li>
-                <Link className="dropdown-item" to="/Protección auditiva">
+                <Link className="dropdown-item" to="/Tienda/Protección auditiva">
                   Protección auditiva
                 </Link>
               </li>
             </ul>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/views/contacto.html">
+            <Link className="nav-link" to="/">
               Contacto
-            </a>
+            </Link>
           </li>
         </ul>
 

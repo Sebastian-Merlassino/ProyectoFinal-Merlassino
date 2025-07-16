@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { getProductById } from "../data/products";
 
-const useProduct = () => {
+const useProduct = (productId) => {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProductById(4)
+    getProductById(productId)
       .then((data) => {
         setProduct(data);
       })

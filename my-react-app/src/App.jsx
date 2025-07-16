@@ -22,8 +22,20 @@ function App() {
               element={<ItemListWhithSearch Agregar={agregarAlCarrito} />}
             />
             <Route
-              path="/item/:id"
+              path="/detail/:productId"
               element={<ItemDetailContainer Agregar={agregarAlCarrito} />}
+            />
+            <Route path="/Tienda/:category" element={<ItemListWhithSearch Agregar={agregarAlCarrito} />} />
+
+            <Route
+              path="*"
+              element={
+                <div style={{ padding: "2rem", textAlign: "center" }}>
+                  <h1>404</h1>
+                  <h2>Página no encontrada</h2>
+                  <p>Lo sentimos, la página que buscas no existe.</p>
+                </div>
+              }
             />
           </Routes>
         </main>

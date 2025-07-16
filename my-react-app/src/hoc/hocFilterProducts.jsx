@@ -2,11 +2,13 @@ import { useState } from "react";
 import useProducts from "../hooks/useProducts";
 import "./hocFilterProducts.css";
 import Loading from "../components/Loading/Loading";
+import { useParams } from "react-router-dom";
 
 const hocFilterProducts = (Component) => {
   return function ({ Agregar }) {
+    const { category } = useParams();
     const [query, setQuery] = useState("");
-    const { products, loading, error } = useProducts();
+    const { products, loading, error } = useProducts(category);
 
     const changeInput = (event) => {
       setQuery(event.target.value.toLowerCase());
@@ -19,6 +21,8 @@ const hocFilterProducts = (Component) => {
 
       return filterProducts;
     };
+
+    console.log(category);
 
     return (
       <>
