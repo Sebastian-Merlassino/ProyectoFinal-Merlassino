@@ -1,17 +1,18 @@
 import "./navbar.css";
 import gestionSysoLogo from "../../assets/Logo.png";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ cartCount }) => {
   return (
     <nav className="navbar">
-      <a href="#" title="Gestión SySO" className="navbar-brand">
+      <Link to="/" title="Gestión SySO" className="navbar-brand">
         <img
           className="navbar-logo"
           src={gestionSysoLogo}
           alt="Logotipo de Gestión SySO"
         />
-      </a>
+      </Link>
 
       <div className="d-flex align-items-center gap-4 nav-items-container">
         <ul className="nav nav-underline mb-0">
@@ -42,19 +43,19 @@ const NavBar = ({ cartCount }) => {
             </a>
             <ul className="dropdown-menu">
               <li>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="/Cascos de seguridad">
                   Cascos de seguridad
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="/Protección ocular">
                   Protección ocular
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="/Protección auditiva">
                   Protección auditiva
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
