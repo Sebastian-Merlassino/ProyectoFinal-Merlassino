@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { ItemListWhithSearch } from "./components/ItemList/ItemList";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <CartProvider>
       <div className="app-container">
         <NavBar cartCount={cartCount} />
 
@@ -44,6 +46,7 @@ function App() {
           <p>© 2025 Gestión SySO. Todos los derechos reservados.</p>
         </footer>
       </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }

@@ -1,12 +1,15 @@
 import "./itemdetail.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product = {}, Agregar }) => {
-  const addProductToCart = (quantity) => {
-    const productCart = { ...product, quantity };
-    console.log("Producto agregado al carrito:", productCart);
-
+  const { addProductInCart } = useContext(CartContext);
+  const addProduct = (quantity) => {
+    const productCart = { ...product, quantity }; 
+//añadir producto al carrito con la cantidad seleccionada
+    addProductInCart(productCart); 
   }
 
   return (
@@ -29,7 +32,7 @@ const ItemDetail = ({ product = {}, Agregar }) => {
               <p className="card-text">{product.description}</p>
               <p>Precio: ${product.price}</p>
               <p>Stock: {product.stock}</p>
-              <ItemCount stock={product.stock} addProductToCart={addProductToCart} />
+              <ItemCount stock={product.stock} addProduct={addProduct} />
               <button className="btn btn-primary" onClick={Agregar}>
                 Agregar al carrito
               </button>
