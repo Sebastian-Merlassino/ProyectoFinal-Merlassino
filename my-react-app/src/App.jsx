@@ -6,6 +6,7 @@ import { ItemListWhithSearch } from "./components/ItemList/ItemList";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -14,38 +15,38 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-      <div className="app-container">
-        <NavBar cartCount={cartCount} />
+        <div className="app-container">
+          <NavBar cartCount={cartCount} />
 
-        <main className="main-content">
-          <Routes>
-            <Route
-              path="/"
-              element={<ItemListWhithSearch Agregar={agregarAlCarrito} />}
-            />
-            <Route
-              path="/detail/:productId"
-              element={<ItemDetailContainer Agregar={agregarAlCarrito} />}
-            />
-            <Route path="/Tienda/:category" element={<ItemListWhithSearch Agregar={agregarAlCarrito} />} />
+          <main className="main-content">
+            <Routes>
+              <Route
+                path="/"
+                element={<ItemListWhithSearch Agregar={agregarAlCarrito} />}
+              />
+              <Route
+                path="/detail/:productId"
+                element={<ItemDetailContainer Agregar={agregarAlCarrito} />}
+              />
+              <Route path="/Tienda/:category" element={<ItemListWhithSearch Agregar={agregarAlCarrito} />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route
+                path="*"
+                element={
+                  <div style={{ padding: "2rem", textAlign: "center" }}>
+                    <h1>404</h1>
+                    <h2>Página no encontrada</h2>
+                    <p>Lo sentimos, la página que buscas no existe.</p>
+                  </div>
+                }
+              />
+            </Routes>
+          </main>
 
-            <Route
-              path="*"
-              element={
-                <div style={{ padding: "2rem", textAlign: "center" }}>
-                  <h1>404</h1>
-                  <h2>Página no encontrada</h2>
-                  <p>Lo sentimos, la página que buscas no existe.</p>
-                </div>
-              }
-            />
-          </Routes>
-        </main>
-
-        <footer className="footer">
-          <p>© 2025 Gestión SySO. Todos los derechos reservados.</p>
-        </footer>
-      </div>
+          <footer className="footer">
+            <p>© 2025 Gestión SySO. Todos los derechos reservados.</p>
+          </footer>
+        </div>
       </CartProvider>
     </BrowserRouter>
   );
