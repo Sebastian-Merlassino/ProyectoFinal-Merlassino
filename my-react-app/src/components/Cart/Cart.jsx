@@ -20,6 +20,9 @@ const Cart = () => {
             <p>Total: ${totalPrice()}</p>
 
             <button className="btn btn-danger" onClick={() => clearCart()}>Vaciar carrito</button>
+
+            
+
         </div>
     )
 }
