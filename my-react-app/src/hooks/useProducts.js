@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../data/products";
+// import { getProducts } from "../data/products";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../components/db/db";
 
@@ -16,10 +16,13 @@ const useProducts = (category) => {
                     ...productDb.data(),
                 };
             });
-            setProducts(data);
-            setLoading(false);
+
+            setTimeout(() => {
+                setProducts(data);
+                setLoading(false);
+            }, 1000);
         } catch (error) {
-            console.error("Error fetching products:", error);
+            console.error("Error al cargar los productos", error);
             throw error;
         }
     };
@@ -37,10 +40,12 @@ const useProducts = (category) => {
                     ...productDb.data(),
                 };
             });
-            setProducts(data);
-            setLoading(false);
+            setTimeout(() => {
+                setProducts(data);
+                setLoading(false);
+            }, 1000);
         } catch (error) {
-            console.error("Error fetching products by category:", error);
+            console.error("Error al cargar los productos", error);
             throw error;
         }
     };

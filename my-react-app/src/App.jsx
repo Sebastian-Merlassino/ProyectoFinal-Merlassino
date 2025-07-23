@@ -31,6 +31,7 @@ function App() {
               />
               <Route path="/Tienda/:category" element={<ItemListWhithSearch Agregar={agregarAlCarrito} />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route
                 path="*"
                 element={
@@ -41,7 +42,6 @@ function App() {
                   </div>
                 }
               />
-              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </main>
 
