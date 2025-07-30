@@ -12,6 +12,10 @@ const Item = ({ product, Agregar }) => {
           <Link to={`/detail/${product.id}`} className="card-link">
             Más información
           </Link>
+          {/* <button className="btn btn-primary" onClick={Agregar}>
+            Agregar al carrito
+          </button> */}
+          <ItemCount stock={product.stock} addProduct={addProduct} />
           <button className="btn btn-primary" onClick={Agregar}>
             Agregar al carrito
           </button>
