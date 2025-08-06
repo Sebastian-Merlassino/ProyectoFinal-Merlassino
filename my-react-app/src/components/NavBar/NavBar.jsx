@@ -2,8 +2,13 @@ import "./navbar.css";
 import gestionSysoLogo from "../../assets/Logo.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const NavBar = ({ cartCount }) => {
+const NavBar = () => {
+  const {cart} = useContext(CartContext);
+  const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <nav className="navbar">
       <Link to="/" title="Gestión SySO" className="navbar-brand">

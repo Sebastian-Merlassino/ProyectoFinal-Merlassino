@@ -22,7 +22,6 @@ const hocFilterProducts = (Component) => {
       return filterProducts;
     };
 
-    console.log(category);
 
     return (
       <>

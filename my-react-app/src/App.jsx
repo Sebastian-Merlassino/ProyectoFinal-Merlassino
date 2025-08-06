@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-// import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { ItemListWhithSearch } from "./components/ItemList/ItemList";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -10,26 +8,24 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
-  const agregarAlCarrito = () => setCartCount(cartCount + 1);
 
   return (
     <BrowserRouter>
       <CartProvider>
         <div className="app-container">
-          <NavBar cartCount={cartCount} />
+          <NavBar />
 
           <main className="main-content">
             <Routes>
               <Route
                 path="/"
-                element={<ItemListWhithSearch Agregar={agregarAlCarrito} />}
+                element={<ItemListWhithSearch />}
               />
               <Route
                 path="/detail/:productId"
-                element={<ItemDetailContainer Agregar={agregarAlCarrito} />}
+                element={<ItemDetailContainer />}
               />
-              <Route path="/Tienda/:category" element={<ItemListWhithSearch Agregar={agregarAlCarrito} />} />
+              <Route path="/Tienda/:category" element={<ItemListWhithSearch />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route
