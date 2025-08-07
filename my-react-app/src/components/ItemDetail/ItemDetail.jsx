@@ -30,12 +30,10 @@ const ItemDetail = ({ product = {}, Agregar }) => {
             <div className="card-body">
               <h5 className="card-title">{product.name}</h5>
               <p className="card-text">{product.description}</p>
-              <p>Precio: ${product.price}</p>
-              <p>Stock: {product.stock}</p>
+              <p className="card-text">Precio: ${product.price}</p>
+              <p className="card-text">Stock: {product.stock}</p>
               <ItemCount stock={product.stock} addProduct={addProduct} />
-              <button className="btn btn-primary" onClick={Agregar}>
-                Agregar al carrito
-              </button>
+
             </div>
           </div>
         </div>

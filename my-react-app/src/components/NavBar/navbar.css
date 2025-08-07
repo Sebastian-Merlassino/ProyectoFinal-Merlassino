@@ -1,26 +1,30 @@
-.navbar {
+nav.navbar {
+    position: fixed !important;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
     align-items: center;
-    position: fixed;    
     top: 0;
     width: 100%;
-    height: 64px;
+    height: 80px;
     border-bottom: 1px solid grey;
     z-index: 1000;
+    background-color: white;
+    padding: 0 30px;
 }
 
-.nav-items-container {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: white;
+        padding: 1rem;
+        border: 1px solid grey;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .navbar-logo {
     height: 50px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .navbar a {

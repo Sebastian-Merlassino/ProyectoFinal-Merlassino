@@ -18,19 +18,14 @@ const Item = ({ product }) => {
       <img src={product.image} className="card-img-top" alt="" />
       <div className="card-body">
         <h5 className="card-title">{product.name}</h5>
-        <p>Precio: ${product.price}</p>
-        <div className="card-actions">
+        <p className="card-text">Precio: ${product.price}</p>
+
           <Link to={`/detail/${product.id}`} className="card-link">
             Más información
           </Link>
-          {/* <button className="btn btn-primary" onClick={Agregar}>
-            Agregar al carrito
-          </button> */}
+          <div className="item-count-container">
           <ItemCount stock={product.stock} addProduct={addProduct} />
-          {/* <button className="btn btn-primary" onClick={Agregar}>
-            Agregar al carrito
-          </button> */}
-        </div>
+          </div>
       </div>
     </div>
   );
