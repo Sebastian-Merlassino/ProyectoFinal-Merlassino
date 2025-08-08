@@ -1,5 +1,7 @@
 import "./itemcount.css";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ItemCount = ({ stock, addProduct }) => {
     const [count, setCount] = useState(1);
@@ -31,7 +33,22 @@ const ItemCount = ({ stock, addProduct }) => {
                     +
                 </button>
             </div>
-            <button onClick={() => addProduct(count)} className="btn btn-primary">
+            <button
+                onClick={() => {
+                    addProduct(count);
+                    toast.success("Producto agregado al carrito 🛒", {
+                        position: "top-right",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                }}
+                className="btn btn-primary"
+            >
                 Añadir al carrito
             </button>
         </div>
