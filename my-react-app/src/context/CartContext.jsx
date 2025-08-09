@@ -27,7 +27,7 @@ const CartProvider = ({ children }) => {
 
     const totalPrice = () => {
         const total = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
-        return total;
+        return parseFloat(total.toFixed(2));
     };
 
     const removeProductByID = (id) => {
