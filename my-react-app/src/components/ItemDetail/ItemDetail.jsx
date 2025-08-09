@@ -7,16 +7,13 @@ import { CartContext } from "../../context/CartContext";
 const ItemDetail = ({ product = {}, Agregar }) => {
   const { addProductInCart } = useContext(CartContext);
   const addProduct = (quantity) => {
-    const productCart = { ...product, quantity }; 
-//añadir producto al carrito con la cantidad seleccionada
-    addProductInCart(productCart); 
-  }
+    const productCart = { ...product, quantity };
+    //añadir producto al carrito con la cantidad seleccionada
+    addProductInCart(productCart);
+  };
 
   return (
     <div className="item-detail-container">
-      <Link to="/" className="btn btn-secondary">
-        Volver
-      </Link>
       <div className="card mb-3 item-detail">
         <div className="row g-0">
           <div className="col-md-6">
@@ -32,8 +29,20 @@ const ItemDetail = ({ product = {}, Agregar }) => {
               <p className="card-text">{product.description}</p>
               <p className="card-text">Precio: ${product.price}</p>
               <p className="card-text">Stock: {product.stock}</p>
-              <ItemCount stock={product.stock} addProduct={addProduct} />
 
+              <div className="item-count-container">
+                <ItemCount stock={product.stock} addProduct={addProduct} />
+              </div>
+
+              <div className="detail-actions">
+                <Link to="/" className="btn btn-secondary">
+                  Seguir comprando
+                </Link>
+
+                <Link to="/cart" className="btn btn-success">
+                  Ir al carrito
+                </Link>
+              </div>
             </div>
           </div>
         </div>

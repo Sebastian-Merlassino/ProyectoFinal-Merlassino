@@ -14,9 +14,9 @@ const Item = ({ product }) => {
   };
   
   return (
-    <div className="card">
+    <div className="card item-card">
       <img src={product.image} className="card-img-top" alt="" />
-      <div className="card-body">
+      <div className="card-body item-card-body">
         <h5 className="card-title">{product.name}</h5>
         <p className="card-text">Precio: ${product.price}</p>
 

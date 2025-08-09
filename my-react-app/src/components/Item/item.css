@@ -1,4 +1,4 @@
-.card {
+.item-card {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.card-body {
+.item-card-body {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -24,13 +24,21 @@
   justify-content: center;
 }
 
-.card:hover {
+.item-card:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.card:hover img {
+.item-card:hover img {
   transition: transform 0.3s ease-in-out;
   transform: scale(1.05);
 }
 
-
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+.item-card:hover .card-link {
+  color: #007bff;
+}

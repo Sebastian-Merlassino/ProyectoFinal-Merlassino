@@ -44,7 +44,7 @@ const ItemCount = ({ stock, addProduct }) => {
                         pauseOnHover: false,
                         draggable: true,
                         progress: undefined,
-                        theme: "colored",
+                        theme: "light",
                     });
                 }}
                 className="btn btn-primary"

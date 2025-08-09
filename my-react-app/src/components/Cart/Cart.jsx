@@ -8,7 +8,7 @@ const Cart = () => {
   const { cart, totalPrice, removeProductByID, clearCart } =
     useContext(CartContext);
   // Si el carrito está vacío, seguir comprando
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (cart.length === 0) {
@@ -17,7 +17,7 @@ const navigate = useNavigate();
         text: "Agrega productos para continuar con tu compra",
         icon: "info",
         confirmButtonText: "Seguir comprando",
-        confirmButtonColor: "#0d6efd"
+        confirmButtonColor: "#0d6efd",
       }).then(() => {
         navigate("/");
       });
@@ -29,19 +29,15 @@ const navigate = useNavigate();
     return null;
   }
 
-
   return (
     <div className="container my-5">
       <h2 className="mb-4">Tu carrito 🛒</h2>
-      <Link to="/" className="btn btn-secondary mb-4">
-        Volver
-      </Link>
 
       <div className="cart-items-list">
         {cart.map((productCart) => (
           <div key={productCart.id} className="card mb-3 shadow-sm cart-card">
             <div className="row g-0">
-              <div className="col-md-4">
+              <div className="col-md-4 cart-img-container">
                 <img
                   src={productCart.image}
                   alt={productCart.name}
@@ -49,7 +45,7 @@ const navigate = useNavigate();
                 />
               </div>
               <div className="col-md-8">
-                <div className="card-body">
+                <div className="card-body cart-card-body">
                   <h5 className="card-title">{productCart.name}</h5>
                   <p className="card-text mb-1">
                     Precio unitario: ${productCart.price}
@@ -61,8 +57,9 @@ const navigate = useNavigate();
                     Total del producto: $
                     {productCart.price * productCart.quantity}
                   </p>
+                  <div className="d-grid gap-3 d-md-flex">
                   <button
-                    className="btn btn-sm btn-danger"
+                    className="btn btn-danger"
                     onClick={() => {
                       Swal.fire({
                         title: "¿Eliminar producto?",
@@ -89,6 +86,10 @@ const navigate = useNavigate();
                   >
                     🗑️ Eliminar
                   </button>
+                  <Link to="/" className="btn btn-primary">
+                    Seguir comprando
+                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
